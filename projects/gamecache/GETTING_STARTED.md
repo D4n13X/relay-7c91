@@ -24,43 +24,28 @@ disk selection/format/mount controls. Other listed platforms remain disabled.
 
 ## 2. Add the D4n13X repository and install
 
-The repository installer always has the same download URL; its internal version
-advances with releases. OPNsense's default root shell is `tcsh`, which cannot run
-the variable assignments below. **First run this command by itself:**
+Use the same shared installer for every D4n13X plugin. Run these commands as root
+in the appliance shell (`tcsh` is supported; the installer runs through `sh`):
 
 ```sh
-/bin/sh
-```
-
-**Then run the following in the new shell:**
-
-```sh
-set -eu
-feed='https://d4n13x.github.io/relay-7c91/FreeBSD:15:amd64/26.7'
-fetch -o /tmp/os-d4n13x-repo.pkg "$feed/os-d4n13x-repo.pkg"
-fetch -o /tmp/os-d4n13x-repo.pkg.sha256 "$feed/os-d4n13x-repo.pkg.sha256"
-test "$(sha256 -q /tmp/os-d4n13x-repo.pkg)" = "$(cat /tmp/os-d4n13x-repo.pkg.sha256)"
-pkg add -M /tmp/os-d4n13x-repo.pkg
-pkg update -r D4n13X
+fetch -qo - https://d4n13x.github.io/relay-7c91/install-repo.sh | sh
 pkg install -r D4n13X os-gamecache
 ```
 
-Stop if any command fails. If the checksum comparison fails during a release,
-download both files again. The checksum checks the download; the initial
-repository installer is trusted through HTTPS. Subsequent feed updates use its
-public signing key. Review the package transaction before accepting it.
+The installer downloads the independently versioned **os-d4n13x-repo** package,
+checks its pinned checksum and both public signing-key fingerprints, and verifies
+fresh signed catalogs. It configures both Game Cache and Hetzner feeds without
+enabling either plugin. Review the plugin package transaction before accepting it.
+The initial installer is trusted through HTTPS; later catalogs are signed.
 
-After successful installation, run `exit` to return to the original root shell.
+For later updates, run the same two commands. A current or newer central bootstrap
+is kept rather than downgraded. The retired standalone Hetzner bootstrap is migrated
+with a private rollback backup. If you still have the historical
+`os-gamecache-repo` name, ask your beta coordinator about the one-time migration.
 
-If `os-d4n13x-repo` is already installed, skip the download/add steps and use:
-
-```sh
-pkg update -r D4n13X
-pkg install -r D4n13X os-d4n13x-repo os-gamecache
-```
-
-The older `os-gamecache-repo` name requires a one-time migration; ask the beta
-coordinator instead of installing a second bootstrap over it.
+Game Cache's native repository identifier stays **D4n13X**. Its canonical feed is
+under `projects/gamecache/`; the old root feed and old versioned downloads remain
+available for clients that have not yet received the central URL update.
 
 ## 3. Configure Services → Game Cache
 
