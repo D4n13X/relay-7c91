@@ -4,8 +4,9 @@ Cache Steam downloads on your OPNsense appliance using a dedicated disk.
 This is an experimental beta for **OPNsense 26.7 amd64, FreeBSD 15.1 and Unbound**.
 Use a test appliance and save an OPNsense configuration backup first.
 
-**Available:** Steam caching, basic statistics and service status.
-**Still planned:** Battle.net support, dashboard charts, richer statistics, and
+**Available in 0.4.0:** Steam caching, traffic and HIT/MISS charts, service status,
+and a native Game Cache dashboard widget.
+**Still planned:** Battle.net support, incremental retained statistics, and
 disk selection/format/mount controls. Other listed platforms remain disabled.
 
 ## 1. Before you install
@@ -74,7 +75,13 @@ Download a small Steam game, uninstall it on the test client, and download the
 same content again. Cached HTTP requests should show HIT activity on the second
 download. Content changes and uncached traffic can still need internet access.
 Current statistics are a bounded log sample; they are not an exact WAN-savings
-meter. Dashboard charts are not available in this beta yet.
+meter.
+
+Charts appear under **Services → Game Cache → Traffic and cache outcomes**.
+Choose the last hour, 24 hours or seven days. To add the main dashboard widget,
+open **Lobby → Dashboard**, use Edit/Add widget, select **Game Cache**, then Save.
+Widgets are saved per user. The charts show the available log sample, which can
+cover less than the selected window. Battle.net remains unqualified.
 
 Send the beta coordinator your OPNsense/plugin versions, game, test time, service
 status and the before/after statistics. Include any error message. Review logs
