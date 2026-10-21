@@ -25,7 +25,14 @@ disk selection/format/mount controls. Other listed platforms remain disabled.
 ## 2. Add the D4n13X repository and install
 
 The repository installer always has the same download URL; its internal version
-advances with releases. Run this in a root **`/bin/sh`** shell:
+advances with releases. OPNsense's default root shell is `tcsh`, which cannot run
+the variable assignments below. **First run this command by itself:**
+
+```sh
+/bin/sh
+```
+
+**Then run the following in the new shell:**
 
 ```sh
 set -eu
@@ -42,6 +49,8 @@ Stop if any command fails. If the checksum comparison fails during a release,
 download both files again. The checksum checks the download; the initial
 repository installer is trusted through HTTPS. Subsequent feed updates use its
 public signing key. Review the package transaction before accepting it.
+
+After successful installation, run `exit` to return to the original root shell.
 
 If `os-d4n13x-repo` is already installed, skip the download/add steps and use:
 
