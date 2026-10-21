@@ -30,17 +30,20 @@ Use a test server/firewall first and retain independent management access.
 Open an OPNsense **root shell** (console option 8 or SSH) and run:
 
 ```sh
-fetch -qo - https://d4n13x.github.io/relay-7c91/projects/hetzner-firewall-updater/install-repo.sh | sh
+fetch -qo - https://d4n13x.github.io/relay-7c91/install-repo.sh | sh
 ```
 
-This installs the **repository package for ongoing updates**, verifies its pinned
-checksum and signing key, and authenticates a fresh signed catalog. It does not
-install or enable the plugin. Re-running it checks the existing repository
-package and refreshes the catalog without downgrading a newer installer.
+This installs or updates **os-d4n13x-repo**, the one shared repository package for
+**all D4n13X plugins and future updates**. It owns the existing Game Cache source
+and the Hetzner source, with their independent signing keys. It does not install
+or enable either plugin. Existing users should run it once to update the central
+bootstrap to 0.4.2 or newer.
 
-Existing D4n13X/Game Cache sources stay intact. Users who already installed
-`os-d4n13x-repo` still need this Hetzner-specific setup once. The script is
-[available to inspect](https://github.com/D4n13X/relay-7c91/blob/main/projects/hetzner-firewall-updater/install-repo.sh).
+If you installed the earlier, incorrect `os-hetzner-firewall-updater-repo`
+bootstrap, the script migrates it into `os-d4n13x-repo`, privately backs it up,
+and retains the Hetzner plugin and settings. Do not install a separate repository
+package for each plugin. The old project-specific install script now forwards
+to the same shared installer.
 
 Independent signing-key fingerprint (public DER SHA-256):
 
@@ -114,15 +117,15 @@ pkg upgrade -r HetznerFirewallUpdater os-hetzner-firewall-updater
 ```
 
 Disable the plugin and save before removal. Wait for any running operation to
-finish, then remove only these two packages if desired:
+finish, then remove the plugin if desired:
 
 ```sh
-pkg delete os-hetzner-firewall-updater os-hetzner-firewall-updater-repo
+pkg delete os-hetzner-firewall-updater
 ```
 
 Saved plugin settings/history are retained; configuration backups may still
-contain credentials. Removing the repository package removes only its own
-source/key and registration. Game Cache and normal OPNsense repositories remain.
+contain credentials. Keep **os-d4n13x-repo** installed: it supplies update feeds for your other plugins
+too. Game Cache and normal OPNsense repositories remain unchanged.
 
 ## If something fails
 

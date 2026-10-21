@@ -2,9 +2,28 @@
   "repository_url": "https://d4n13x.github.io/relay-7c91/FreeBSD:15:amd64/26.7",
   "abi": "FreeBSD:15:amd64",
   "opnsense_release": "26.7",
+  "version": "0.4.2",
   "public_key_der_sha256": "994304f193330956c0892ba655068253821d0c5830e8bfc8cb252e2707d6e91c",
   "packages": {
-    "os-d4n13x-repo-0.4.1.pkg": "bd4257a44d5058423cbdb4c5044363c254d47ecd43961d6fbf371620afefcdb6",
+    "os-d4n13x-repo-0.4.2.pkg": "bdea7e0b8bb4010ae82e23d6d1a571080e882e8d154afee18572835ed7cae6b9",
     "os-gamecache-0.4.1.pkg": "0a69858e2cdb495fd7f49225c0ffd4b0d3d2a54689defe888b0d31c3b580f61c"
-  }
+  },
+  "files": {
+    "install-repo.sh": "e514e655d882e1b78a41cb9353f15650c5638679d15af1c45b4a51093a064340",
+    ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gamecache.pub": "54497d51e726b26350cdad62ffb1d2eb4f82e9a25bb1b220821a26c903919226",
+    "FreeBSD:15:amd64/26.7/packagesite.pkg": "4a90a1c29a83c88fdb963d942e5d7d593c73504da28ad4b6ab19819d73c980e4",
+    "FreeBSD:15:amd64/26.7/meta": "ca7f091a4f9eccbf537a966a0d4d555cdfc4de34ad5be5c96a12c4485130664c",
+    "FreeBSD:15:amd64/26.7/meta.conf": "ca7f091a4f9eccbf537a966a0d4d555cdfc4de34ad5be5c96a12c4485130664c",
+    "FreeBSD:15:amd64/26.7/os-d4n13x-repo-0.4.2.pkg": "bdea7e0b8bb4010ae82e23d6d1a571080e882e8d154afee18572835ed7cae6b9",
+    "FreeBSD:15:amd64/26.7/data.pkg": "52bc89e65a2588376d9641fcc294596ec396bb5489276ba27bdef1a66a56f468",
+    "FreeBSD:15:amd64/26.7/os-d4n13x-repo.pkg": "bdea7e0b8bb4010ae82e23d6d1a571080e882e8d154afee18572835ed7cae6b9",
+    "FreeBSD:15:amd64/26.7/os-d4n13x-repo.pkg.sha256": "37207a4ab2408ea083f4b7c2240d68e9cf0f22bbd256c241ccb9c6aeac9137fe",
+    "FreeBSD:15:amd64/26.7/os-gamecache-0.4.1.pkg": "0a69858e2cdb495fd7f49225c0ffd4b0d3d2a54689defe888b0d31c3b580f61c",
+    "projects/opnsense-repository/bootstrap-build.json": "f2fb6cab593ae4d019b77b7555c53d3264f0fd8de7cfdf4e3e8f186827f626d7",
+    "projects/opnsense-repository/GETTING_STARTED.md": "b602530e7c30f8818309d9b2dc0cfbc3f05ac06e5925f9b65fbd75a12ac934d5",
+    "projects/opnsense-repository/install-repo.sh.in": "01edec0273b5d802b1729f0a0ee1677c42610fa957d1c6b1bcefd3ede0d1a4ca",
+    "projects/opnsense-repository/build_bootstrap.py": "2157d04a18d053fae7682d9f36993c297c20e988892924904f8792c8010da7e5"
+  },
+  "catalog_signer": "upstream pkg 2.8.4; local key; native package artifacts"
 }
