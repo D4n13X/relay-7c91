@@ -45,6 +45,9 @@ fetch -o "$work/repo.pkg" 'https://d4n13x.github.io/relay-7c91/projects/hetzner-
 pkg add "$work/repo.pkg"
 pkg update -f -r HetznerFirewallUpdater
 pkg rquery -r HetznerFirewallUpdater '%n %v'
+if [ "$(pkg query '%R' os-hetzner-firewall-updater-repo)" = unknown-repository ]; then
+  pkg annotate -y -A os-hetzner-firewall-updater-repo repository HetznerFirewallUpdater
+fi
 SH
 ```
 

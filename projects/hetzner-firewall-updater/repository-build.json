@@ -9,7 +9,7 @@
   "files": {
     "os-hetzner-firewall-updater-repo.pkg": "eff3b9ab3281797a8ed0156b80185ba8ef4c479466e600c291c44f033d52d59c",
     "os-hetzner-firewall-updater-repo.pkg.sha256": "a41a0706d712e1d58f7c4d3a7d2a0bee15053621ca0b2bb6769101ce84e96c01",
-    "GETTING_STARTED.md": "91842dc1bfc8bfa50032ab2fba8fa7df55bb11f9e48aa0409ffe2870fd349a49",
+    "GETTING_STARTED.md": "cff9659e873c7b69ed9c30002e4c3ac66ec650639f4d9f8a6b0fb805e6150a5d",
     "HetznerFirewallUpdater.conf": "e62e7b81b90e8c2b5b6f4d496115a6675878ae896417acfa02818fee2ebcf41e",
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "hetzner-firewall-updater.pub": "9aaf57db15ed063dd32abb0d86082e4ee88bccb2a438fd286e1ab68768a95ab1",
