@@ -45,11 +45,27 @@ main() {
         fi
     fi
     pkg check -s os-d4n13x-repo
-    # An upgraded owned split-feed configuration is removed by native pkg.
-    if [ -f /usr/local/etc/pkg/repos/HetznerFirewallUpdater.conf ]; then
-        echo 'An unmanaged legacy Hetzner source remains; inspect its ownership before removal.' >&2
-        exit 1
-    fi
+    # Native pkg can retain dropped configuration files. Remove ONLY exact known,
+    # now-unowned legacy files, after a private backup. Refuse modified/owned files.
+    for d4_legacy in '/usr/local/etc/pkg/repos/HetznerFirewallUpdater.conf:e62e7b81b90e8c2b5b6f4d496115a6675878ae896417acfa02818fee2ebcf41e' '/usr/local/etc/pkg/keys/hetzner-firewall-updater.pub:9aaf57db15ed063dd32abb0d86082e4ee88bccb2a438fd286e1ab68768a95ab1'; do
+        d4_path=${d4_legacy%%:*}
+        d4_hash=${d4_legacy#*:}
+        if [ -e "$d4_path" ] || [ -L "$d4_path" ]; then
+            [ -f "$d4_path" ] && [ ! -L "$d4_path" ] || { echo 'Unexpected legacy source file type; inspect manually.' >&2; exit 1; }
+            if pkg which -q "$d4_path" >/dev/null 2>&1; then
+                echo 'Legacy source file is still package-owned; inspect ownership before migration.' >&2
+                exit 1
+            fi
+            [ "$(sha256 -q "$d4_path")" = "$d4_hash" ] || { echo 'Legacy source was modified; inspect before migration.' >&2; exit 1; }
+            if [ -z "${d4_backup:-}" ]; then
+                d4_backup=$(mktemp -d /root/d4n13x-repo-migration.XXXXXX)
+                cp -p /conf/config.xml "$d4_backup/config.xml"
+                echo "Private migration backup: $d4_backup"
+            fi
+            cp -p "$d4_path" "$d4_backup/$(basename "$d4_path")"
+            rm "$d4_path"
+        fi
+    done
     pkg update -f -r D4n13X
     pkg rquery -r D4n13X '%n' > "$d4_work/catalog"
     for d4_expected in os-d4n13x-repo os-gamecache os-hetzner-firewall-updater; do

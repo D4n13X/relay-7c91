@@ -10,7 +10,7 @@
     "os-hetzner-firewall-updater-0.1.2.pkg": "b029653c901e11dd396dcce6b9643dc6acee3a18271a95503c581cd1b4ad25fc"
   },
   "files": {
-    "install-repo.sh": "4a3074465b534046d8eb6db33f64502a3c9f47143959bbb5d05f39a4f5129b6e",
+    "install-repo.sh": "9a7e63e907341423922d7713e6dfa79e4bea5c767a13cc8c85b928fa0afcf2de",
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "gamecache.pub": "54497d51e726b26350cdad62ffb1d2eb4f82e9a25bb1b220821a26c903919226",
     "FreeBSD:15:amd64/26.7/packagesite.pkg": "9309a2db580df20755b52f4b8fbd2e5aa4746efbd66be9ccc0e77ebfe844b2ca",
@@ -25,7 +25,7 @@
     "projects/opnsense-repository/bootstrap-build.json": "6ba1322544c54752d258906ea59f66ed92191ce4216d43eceb293684cf26ac06",
     "projects/opnsense-repository/GETTING_STARTED.md": "2c960bf612b3fe7b0b46dd6a5153143f779e5df35c11a6107e25a91edceab17c",
     "projects/opnsense-repository/publish_shared_release.py": "9de9f195e8803f1b83d6e500ce98d2f46b83106acc82c5f4bf455585684b6339",
-    "projects/opnsense-repository/install-repo.sh.in": "8840aa0d98375c6ef4e2e943b5ab0393442617ef6ca27184b393cce3ef4a666d",
+    "projects/opnsense-repository/install-repo.sh.in": "de6b1cb80f3404c869844207a4e2f15a9aff7c3d9ea340ce90240cf3ed21fb1b",
     "projects/opnsense-repository/build_bootstrap.py": "d3fe6b523e39df5d6fcd25f7e010f7e5f48bc2296287ece185e4f41a9310ba17",
     "projects/gamecache/repository-build.json": "651a2a4392cd3f25789703b19e1ae2f2da66a41cc7350701e4555d1a1335031b",
     "projects/gamecache/central-bootstrap.json": "6ba1322544c54752d258906ea59f66ed92191ce4216d43eceb293684cf26ac06",
@@ -38,7 +38,7 @@
     "projects/gamecache/FreeBSD:15:amd64/26.7/os-gamecache-0.4.1.pkg": "0a69858e2cdb495fd7f49225c0ffd4b0d3d2a54689defe888b0d31c3b580f61c"
   },
   "catalog_signer": "upstream pkg 2.8.4; local key; native package artifacts",
-  "publication_base_commit": "2c99d5dd24da3f3b96259ba213730272de80582b",
+  "publication_base_commit": "177bdfa3f8f6c4e9705286b8e7e073478be956a9",
   "canonical_repository_url": "https://d4n13x.github.io/relay-7c91/projects/gamecache/FreeBSD:15:amd64/26.7",
   "central_version": "0.4.5",
   "plugin_versions": {
