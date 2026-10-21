@@ -9,7 +9,7 @@
   "files": {
     "os-hetzner-firewall-updater-repo.pkg": "eff3b9ab3281797a8ed0156b80185ba8ef4c479466e600c291c44f033d52d59c",
     "os-hetzner-firewall-updater-repo.pkg.sha256": "a41a0706d712e1d58f7c4d3a7d2a0bee15053621ca0b2bb6769101ce84e96c01",
-    "GETTING_STARTED.md": "cff9659e873c7b69ed9c30002e4c3ac66ec650639f4d9f8a6b0fb805e6150a5d",
+    "GETTING_STARTED.md": "469af98a09b766b5c97e8da544e729076821c2dace8e7febbb32f1ef8640ee03",
     "HetznerFirewallUpdater.conf": "e62e7b81b90e8c2b5b6f4d496115a6675878ae896417acfa02818fee2ebcf41e",
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "hetzner-firewall-updater.pub": "9aaf57db15ed063dd32abb0d86082e4ee88bccb2a438fd286e1ab68768a95ab1",
@@ -18,7 +18,8 @@
     "FreeBSD:15:amd64/26.7/meta.conf": "ca7f091a4f9eccbf537a966a0d4d555cdfc4de34ad5be5c96a12c4485130664c",
     "FreeBSD:15:amd64/26.7/data.pkg": "74c8dfb3e0710df759f2d3bf910f51f71ec98723a1814f1a33ecb2547af8b186",
     "FreeBSD:15:amd64/26.7/os-hetzner-firewall-updater-0.1.1.pkg": "cb09c213ae4e7cd8c114128106f654235a66f73abd3a710554d49f034647f838",
-    "FreeBSD:15:amd64/26.7/os-hetzner-firewall-updater-repo-0.1.1.pkg": "eff3b9ab3281797a8ed0156b80185ba8ef4c479466e600c291c44f033d52d59c"
+    "FreeBSD:15:amd64/26.7/os-hetzner-firewall-updater-repo-0.1.1.pkg": "eff3b9ab3281797a8ed0156b80185ba8ef4c479466e600c291c44f033d52d59c",
+    "install-repo.sh": "71e1683065d665c84db72c5fdf39a03117b15b2d1574616ca19f4619aecd2939"
   },
   "catalog_signer": "upstream pkg 2.8.4; local key; native package artifacts"
 }

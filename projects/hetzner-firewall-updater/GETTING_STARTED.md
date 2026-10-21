@@ -27,35 +27,20 @@ Use a test server/firewall first and retain independent management access.
 
 ## 1. Add the signed package source
 
-Open an OPNsense **root shell** (console option 8 or SSH). Run this whole block:
+Open an OPNsense **root shell** (console option 8 or SSH) and run:
 
 ```sh
-/bin/sh <<'SH'
-set -eu
-[ "$(uname -m)" = amd64 ] || { echo 'Requires amd64'; exit 1; }
-case "$(opnsense-version -v)" in
-  26.7|26.7.*|26.7_*) ;;
-  *) echo 'Requires OPNsense 26.7'; exit 1 ;;
-esac
-[ "$(pkg config ABI)" = 'FreeBSD:15:amd64' ] || { echo 'Wrong package ABI'; exit 1; }
-work=$(mktemp -d /tmp/hetzner-repo-install.XXXXXX)
-trap 'rm -rf "$work"' EXIT HUP INT TERM
-fetch -o "$work/repo.pkg" 'https://d4n13x.github.io/relay-7c91/projects/hetzner-firewall-updater/FreeBSD:15:amd64/26.7/os-hetzner-firewall-updater-repo-0.1.1.pkg'
-[ "$(sha256 -q "$work/repo.pkg")" = 'eff3b9ab3281797a8ed0156b80185ba8ef4c479466e600c291c44f033d52d59c' ] || { echo 'Repository package checksum mismatch'; exit 1; }
-pkg add "$work/repo.pkg"
-pkg update -f -r HetznerFirewallUpdater
-pkg rquery -r HetznerFirewallUpdater '%n %v'
-if [ "$(pkg query '%R' os-hetzner-firewall-updater-repo)" = unknown-repository ]; then
-  pkg annotate -y -A os-hetzner-firewall-updater-repo repository HetznerFirewallUpdater
-fi
-SH
+fetch -qo - https://d4n13x.github.io/relay-7c91/projects/hetzner-firewall-updater/install-repo.sh | sh
 ```
 
-The catalog must list `os-hetzner-firewall-updater 0.1.1`. Stop if the checksum,
-signature, catalog refresh or version check fails. This installs only the
-Hetzner repository configuration/key; it does not enable synchronization or
-replace the existing D4n13X/Game Cache source. Users who already installed
-`os-d4n13x-repo` still need this step once.
+This installs the **repository package for ongoing updates**, verifies its pinned
+checksum and signing key, and authenticates a fresh signed catalog. It does not
+install or enable the plugin. Re-running it checks the existing repository
+package and refreshes the catalog without downgrading a newer installer.
+
+Existing D4n13X/Game Cache sources stay intact. Users who already installed
+`os-d4n13x-repo` still need this Hetzner-specific setup once. The script is
+[available to inspect](https://github.com/D4n13X/relay-7c91/blob/main/projects/hetzner-firewall-updater/install-repo.sh).
 
 Independent signing-key fingerprint (public DER SHA-256):
 
