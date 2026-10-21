@@ -16,7 +16,9 @@ pkg install -r HetznerFirewallUpdater os-hetzner-firewall-updater
 
 The bootstrap owns both feed configurations and their independent signing keys.
 Existing Game Cache trust and its D4n13X repository identifier are preserved.
-Version 0.4.3 adds Hetzner trust to the same shared package. It does not change,
+Version 0.4.4 migrates Game Cache to its canonical projects/gamecache/ feed.
+Hetzner trust, both repository identifiers, keys and policies are preserved.
+The original root feed remains usable for clients that have not upgraded. It does not change,
 install or enable either plugin. Updates remain available through normal native
 package/firmware catalog refreshes.
 

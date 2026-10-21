@@ -6,20 +6,20 @@
   "opnsense_release": "26.7",
   "public_key_der_sha256": "994304f193330956c0892ba655068253821d0c5830e8bfc8cb252e2707d6e91c",
   "plugin_version": "0.4.1",
-  "central_version": "0.4.3",
+  "central_version": "0.4.4",
   "packages": {
     "os-gamecache-0.4.1.pkg": "0a69858e2cdb495fd7f49225c0ffd4b0d3d2a54689defe888b0d31c3b580f61c",
-    "os-d4n13x-repo-0.4.3.pkg": "e2bc0ce276d41959a5cfde7dd11230d3ad2388fdb92a18b189a66a46dfa646e8"
+    "os-d4n13x-repo-0.4.4.pkg": "c4d15b313542feb55ef12e6535de7596fc405167d976439dc4bd088e054637a0"
   },
   "files": {
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "central-bootstrap.json": "3aac51feab630eb9d0e9f8400f3ee3ea253a3b8d477d608e0d0a95e53733ee4d",
+    "central-bootstrap.json": "e9539b6443468df96e4c4a755f04f345daa6950b62485b1d071b7fc612515483",
     "gamecache.pub": "54497d51e726b26350cdad62ffb1d2eb4f82e9a25bb1b220821a26c903919226",
-    "FreeBSD:15:amd64/26.7/packagesite.pkg": "d25f3feba924db48f16b97c88e407b3b177362e2ee045eb83c0185b3d3dd9f31",
+    "FreeBSD:15:amd64/26.7/packagesite.pkg": "6a77c35ba74222f39697e5e8be9f592aad8186ae0c47a17f04a6f4eb8fc97833",
     "FreeBSD:15:amd64/26.7/meta": "ca7f091a4f9eccbf537a966a0d4d555cdfc4de34ad5be5c96a12c4485130664c",
     "FreeBSD:15:amd64/26.7/meta.conf": "ca7f091a4f9eccbf537a966a0d4d555cdfc4de34ad5be5c96a12c4485130664c",
-    "FreeBSD:15:amd64/26.7/os-d4n13x-repo-0.4.3.pkg": "e2bc0ce276d41959a5cfde7dd11230d3ad2388fdb92a18b189a66a46dfa646e8",
-    "FreeBSD:15:amd64/26.7/data.pkg": "1d6c4d8dc7a2169b2f8ed2457d7ecaa6faead09efbefcbaf33cde49006f3da71",
+    "FreeBSD:15:amd64/26.7/data.pkg": "0a299fd01c954f2a4ea15d78ebbab3c91b601a3516f2af0e3145327b6a1e9a3b",
+    "FreeBSD:15:amd64/26.7/os-d4n13x-repo-0.4.4.pkg": "c4d15b313542feb55ef12e6535de7596fc405167d976439dc4bd088e054637a0",
     "FreeBSD:15:amd64/26.7/os-gamecache-0.4.1.pkg": "0a69858e2cdb495fd7f49225c0ffd4b0d3d2a54689defe888b0d31c3b580f61c"
   },
   "catalog_signer": "upstream pkg 2.8.4; workstation key; preserved native packages"
