@@ -4,7 +4,7 @@ Cache Steam downloads on your OPNsense appliance using a dedicated disk.
 This is an experimental beta for **OPNsense 26.7 amd64, FreeBSD 15.1 and Unbound**.
 Use a test appliance and save an OPNsense configuration backup first.
 
-**Available in 0.4.0:** Steam caching, traffic and HIT/MISS charts, service status,
+**Available in 0.4.1:** Steam caching, traffic and HIT/MISS charts, service status,
 and a native Game Cache dashboard widget.
 **Still planned:** Battle.net support, incremental retained statistics, and
 disk selection/format/mount controls. Other listed platforms remain disabled.
@@ -56,13 +56,16 @@ coordinator instead of installing a second bootstrap over it.
 ## 3. Configure Services → Game Cache
 
 1. Refresh the web interface after installation, then open **Services → Game Cache**.
-2. Enter your mounted storage's device path, partition UUID and mountpoint.
-   Set cache capacity, free-space reserve and key-zone budget for your disk/RAM.
-3. Select the static interface and reserved cache IPv4 address. Enter allowed
-   client networks and independent public upstream DNS servers. Do not create
-   an additional persistent VIP for the same address.
-4. Save and validate the settings. Enable caching and Steam discovery DNS, then
-   save and apply. Wait for healthy service status before testing.
+   Its pages are Overview, Settings, Storage, Platforms and Diagnostics.
+2. On **Storage**, enter your mounted filesystem's device path, partition UUID
+   and mountpoint. Set cache capacity, free-space reserve and key-zone budget,
+   then save. Keep the service disabled until the network settings are ready.
+3. On **Settings**, select the static interface and reserved cache IPv4 address.
+   Add allowed client networks and independent public upstream DNS servers as
+   separate entries. Do not create an additional persistent VIP for that address.
+4. Enable caching and Steam discovery DNS on **Settings**, then Save and apply.
+   Check **Overview** for healthy status; use **Diagnostics** to validate saved
+   settings or inspect errors. **Platforms** shows Steam/Battle.net support states.
 5. Make sure test clients use this appliance's Unbound resolver for DNS.
 
 Fresh installations start disabled. Installing the package alone does not turn
@@ -77,7 +80,7 @@ download. Content changes and uncached traffic can still need internet access.
 Current statistics are a bounded log sample; they are not an exact WAN-savings
 meter.
 
-Charts appear under **Services → Game Cache → Traffic and cache outcomes**.
+Charts appear under **Services → Game Cache → Overview**.
 Choose the last hour, 24 hours or seven days. To add the main dashboard widget,
 open **Lobby → Dashboard**, use Edit/Add widget, select **Game Cache**, then Save.
 Widgets are saved per user. The charts show the available log sample, which can

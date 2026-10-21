@@ -4,7 +4,7 @@
   "opnsense_release": "26.7",
   "public_key_der_sha256": "994304f193330956c0892ba655068253821d0c5830e8bfc8cb252e2707d6e91c",
   "packages": {
-    "os-d4n13x-repo-0.4.0.pkg": "d62bec84891e93c65ca5c63d048b303603d26700f57ed0e9d2b6a280ec20f74b",
-    "os-gamecache-0.4.0.pkg": "ab6e0e0dc22a1a01a1ee307c67bf45a0db26a2f5ef48f7002ed7f6db4cec1674"
+    "os-d4n13x-repo-0.4.1.pkg": "bd4257a44d5058423cbdb4c5044363c254d47ecd43961d6fbf371620afefcdb6",
+    "os-gamecache-0.4.1.pkg": "0a69858e2cdb495fd7f49225c0ffd4b0d3d2a54689defe888b0d31c3b580f61c"
   }
 }
