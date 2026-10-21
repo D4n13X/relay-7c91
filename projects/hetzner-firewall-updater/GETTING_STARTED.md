@@ -37,7 +37,7 @@ This installs or updates **os-d4n13x-repo**, the one shared repository package f
 **all D4n13X plugins and future updates**. It owns the existing Game Cache source
 and the Hetzner source, with their independent signing keys. It does not install
 or enable either plugin. Existing users should run it once to update the central
-bootstrap to 0.4.2 or newer.
+bootstrap to 0.4.3 or newer.
 
 If you installed the earlier, incorrect `os-hetzner-firewall-updater-repo`
 bootstrap, the script migrates it into `os-d4n13x-repo`, privately backs it up,

@@ -11,7 +11,7 @@ import platform
 import subprocess
 import tempfile
 
-VERSION='0.4.2'
+VERSION='0.4.3'
 BASELINE_SHA256='bd4257a44d5058423cbdb4c5044363c254d47ecd43961d6fbf371620afefcdb6'
 GAMECACHE_DER='994304f193330956c0892ba655068253821d0c5830e8bfc8cb252e2707d6e91c'
 HETZNER_DER='71540faf358ef598ec86ec0b0e4a9e804b8a0bf80406509faf30f55bec8ecdfa'
@@ -68,7 +68,7 @@ def main():
             comment='D4n13X shared plugin repositories',maintainer='D4n13X',www=BASE,prefix='/usr/local',
             desc='Shared repository bootstrap for all D4n13X OPNsense plugins; independent feed trust.',
             abi='FreeBSD:15:amd64',arch='freebsd:15:amd64',licenselogic='single',licenses=['BSD2CLAUSE'],
-            annotations=product,conflicts=['os-hetzner-firewall-updater-repo'],
+            annotations=product,
             scripts={'post-install':'/usr/local/opnsense/scripts/firmware/register.php install os-d4n13x-repo',
                      'post-deinstall':'/usr/local/opnsense/scripts/firmware/register.php remove os-d4n13x-repo'})
         (stage/'manifest.json').write_text(json.dumps(manifest))

@@ -13,13 +13,13 @@ main() {
     d4_work=$(mktemp -d /tmp/d4n13x-repo-install.XXXXXX)
     trap 'rm -rf "$d4_work"' EXIT
     trap 'exit 1' HUP INT TERM
-    fetch -q -o "$d4_work/repo.pkg" 'https://d4n13x.github.io/relay-7c91/FreeBSD:15:amd64/26.7/os-d4n13x-repo-0.4.2.pkg'
-    [ "$(sha256 -q "$d4_work/repo.pkg")" = 'bdea7e0b8bb4010ae82e23d6d1a571080e882e8d154afee18572835ed7cae6b9' ] || {
+    fetch -q -o "$d4_work/repo.pkg" 'https://d4n13x.github.io/relay-7c91/FreeBSD:15:amd64/26.7/os-d4n13x-repo-0.4.3.pkg'
+    [ "$(sha256 -q "$d4_work/repo.pkg")" = 'e2bc0ce276d41959a5cfde7dd11230d3ad2388fdb92a18b189a66a46dfa646e8' ] || {
         echo 'Central repository package checksum mismatch; nothing changed.' >&2; exit 1;
     }
     d4_install=1
     if pkg info -e os-d4n13x-repo; then
-        d4_compare=$(pkg version -t "$(pkg query '%v' os-d4n13x-repo)" '0.4.2')
+        d4_compare=$(pkg version -t "$(pkg query '%v' os-d4n13x-repo)" '0.4.3')
         case "$d4_compare" in '='|'>') d4_install=0 ;; '<') ;; *) exit 1 ;; esac
     fi
     if pkg info -e os-hetzner-firewall-updater-repo; then
