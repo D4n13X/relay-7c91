@@ -1,18 +1,15 @@
 {
   "name": "os-d4n13x-repo",
-  "version": "0.4.4",
-  "artifact": "os-d4n13x-repo-0.4.4.pkg",
-  "sha256": "c4d15b313542feb55ef12e6535de7596fc405167d976439dc4bd088e054637a0",
-  "baseline_sha256": "e2bc0ce276d41959a5cfde7dd11230d3ad2388fdb92a18b189a66a46dfa646e8",
+  "version": "0.4.5",
+  "artifact": "os-d4n13x-repo-0.4.5.pkg",
+  "sha256": "a48e00dc72268fcc1ce1ab481abaf8ec5ec61b21f90c58be6f1f9a2a075d27f0",
+  "baseline_sha256": "c4d15b313542feb55ef12e6535de7596fc405167d976439dc4bd088e054637a0",
   "files": {
     "etc/pkg/repos/GameCache.conf": "0b92eade3e6b5a2137188ec86441e67ee5a8e970f25b2f89910826d42a76f84c",
     "etc/pkg/keys/gamecache.pub": "54497d51e726b26350cdad62ffb1d2eb4f82e9a25bb1b220821a26c903919226",
-    "etc/pkg/repos/HetznerFirewallUpdater.conf": "e62e7b81b90e8c2b5b6f4d496115a6675878ae896417acfa02818fee2ebcf41e",
-    "etc/pkg/keys/hetzner-firewall-updater.pub": "9aaf57db15ed063dd32abb0d86082e4ee88bccb2a438fd286e1ab68768a95ab1",
-    "opnsense/version/d4n13x-repo": "dae9cc2db5c70dcd41c94f149bc3ecc952d227a3aef652cf663694272048e2c2"
+    "opnsense/version/d4n13x-repo": "80a3bf84ccff7baef5ed76e4d39a2b6f010159f3ba48eda44d3b2288c46ddcd5"
   },
   "feed_public_key_der_sha256": {
-    "D4n13X": "994304f193330956c0892ba655068253821d0c5830e8bfc8cb252e2707d6e91c",
-    "HetznerFirewallUpdater": "71540faf358ef598ec86ec0b0e4a9e804b8a0bf80406509faf30f55bec8ecdfa"
+    "D4n13X": "994304f193330956c0892ba655068253821d0c5830e8bfc8cb252e2707d6e91c"
   }
 }

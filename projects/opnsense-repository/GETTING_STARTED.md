@@ -1,40 +1,41 @@
-# Shared D4n13X OPNsense repository
+# D4n13X plugin repository
 
-Use one package, **os-d4n13x-repo**, for all D4n13X plugin feeds and future updates.
-For OPNsense 26.7 amd64, run as root:
+One native repository named **D4n13X**, configured by **os-d4n13x-repo**, supplies
+all plugins and their updates on OPNsense 26.7 amd64. Run as root:
 
 ```sh
 fetch -qo - https://d4n13x.github.io/relay-7c91/install-repo.sh | sh
+pkg install -r D4n13X os-gamecache
+pkg install -r D4n13X os-hetzner-firewall-updater
 ```
 
-Then install the plugin you want:
+Install whichever plugins you need. The bootstrap does not enable either plugin.
+Version 0.4.5 consolidates the earlier split feeds into the existing D4n13X
+catalog, preserving the latest Game Cache feed URL and existing signing trust. It preserves plugin settings,
+backs up previous bootstrap packages/configuration privately, and removes obsolete
+centrally owned Hetzner source/key files through the native package upgrade.
+The old standalone Hetzner bootstrap is migrated too.
+
+## Update existing beta installations
 
 ```sh
-pkg install -r D4n13X os-gamecache
-pkg install -r HetznerFirewallUpdater os-hetzner-firewall-updater
+fetch -qo - https://d4n13x.github.io/relay-7c91/install-repo.sh | sh
+pkg update -f -r D4n13X
+pkg install -r D4n13X os-hetzner-firewall-updater
+pkg query '%n %v' os-hetzner-firewall-updater
 ```
 
-The bootstrap owns both feed configurations and their independent signing keys.
-Existing Game Cache trust and its D4n13X repository identifier are preserved.
-Version 0.4.4 migrates Game Cache to its canonical projects/gamecache/ feed.
-Hetzner trust, both repository identifiers, keys and policies are preserved.
-The original root feed remains usable for clients that have not upgraded. It does not change,
-install or enable either plugin. Updates remain available through normal native
-package/firmware catalog refreshes.
+The updater should report 0.1.2 or newer; refresh its page. Version 0.1.2 fixes
+native settings/interface reads after selecting an interface. No settings reset or
+reboot is required. Save a private configuration backup before package changes.
 
-The installer verifies its pinned package checksum and both public fingerprints,
-and authenticates fresh catalogs. It migrates the obsolete standalone
-os-hetzner-firewall-updater-repo package into the central package, retaining a
-private rollback package/configuration under /root. The updater itself and saved
-settings are retained. Do not remove the shared os-d4n13x-repo package when
-removing one plugin: it supplies update trust for the others too.
+## Maintainers
 
-Game Cache's guide remains at ../gamecache/GETTING_STARTED.md; the Hetzner guide
-is ../hetzner-firewall-updater/GETTING_STARTED.md. Plugin qualification and setup
-requirements are described in their guides.
-
-Central repository versions are independent of plugin versions. Maintainers must
-reuse the exact current central bootstrap in plugin release catalogs, and must
-not rebuild an older single-feed bootstrap as part of a plugin release. Public
-versioned package URLs are immutable. This directory holds the coordinated
-bootstrap builder; existing feed payloads and keys are pinned and preserved.
+Central bootstrap versions are independent of plugin versions. Release a combined
+signed catalog containing the latest exact artifacts for both plugins and the
+bootstrap. Never rebuild the bootstrap as part of an individual plugin release.
+Preserve versioned bytes and URLs, other project files, and the shared README.
+Publication must reject stale upstream state and preserve the other plugin.
+Keep signing keys local and outside checkouts. Old project feed URLs remain for
+compatibility; new installations use only D4n13X. See each plugin's guide for its
+configuration, beta scope and qualification results.

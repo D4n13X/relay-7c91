@@ -1,21 +1,21 @@
 {
   "repository_url": "https://d4n13x.github.io/relay-7c91/projects/hetzner-firewall-updater/FreeBSD:15:amd64/26.7",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "public_key_der_sha256": "71540faf358ef598ec86ec0b0e4a9e804b8a0bf80406509faf30f55bec8ecdfa",
   "packages": {
-    "os-hetzner-firewall-updater-0.1.1.pkg": "cb09c213ae4e7cd8c114128106f654235a66f73abd3a710554d49f034647f838"
+    "os-hetzner-firewall-updater-0.1.2.pkg": "b029653c901e11dd396dcce6b9643dc6acee3a18271a95503c581cd1b4ad25fc"
   },
   "files": {
-    "GETTING_STARTED.md": "913ac2fbe180226be5457ff9d7b23e3986d6e949f25b49aabc69ee9a0f9c0fb3",
+    "GETTING_STARTED.md": "2334304481f02ed8413382afb5a27ace051bfbab8bc70cceb143052bec53bea3",
     "HetznerFirewallUpdater.conf": "e62e7b81b90e8c2b5b6f4d496115a6675878ae896417acfa02818fee2ebcf41e",
     "install-repo.sh": "a35c6b0961dfe7da944e794d5a320add6089434411991df419db7b5f9e7ce609",
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "hetzner-firewall-updater.pub": "9aaf57db15ed063dd32abb0d86082e4ee88bccb2a438fd286e1ab68768a95ab1",
-    "FreeBSD:15:amd64/26.7/packagesite.pkg": "4dea7bb6e8e41b9c328513e4e4a741ab2193b5cbb88bce43511b831cae488025",
+    "FreeBSD:15:amd64/26.7/packagesite.pkg": "7db3b2fd7ab6bf7430d975622939340da74b7c4312a784afc6330d88b9c19086",
     "FreeBSD:15:amd64/26.7/meta": "ca7f091a4f9eccbf537a966a0d4d555cdfc4de34ad5be5c96a12c4485130664c",
     "FreeBSD:15:amd64/26.7/meta.conf": "ca7f091a4f9eccbf537a966a0d4d555cdfc4de34ad5be5c96a12c4485130664c",
-    "FreeBSD:15:amd64/26.7/data.pkg": "e4b6a79a344e9e571377b21be542dda6e6c9b401f846a446eb256aae5390ceca",
-    "FreeBSD:15:amd64/26.7/os-hetzner-firewall-updater-0.1.1.pkg": "cb09c213ae4e7cd8c114128106f654235a66f73abd3a710554d49f034647f838"
+    "FreeBSD:15:amd64/26.7/data.pkg": "eb51a3edd73ce565e194da001bb0b83a0cdbf75681e3ab80f55e21de2dafa1f5",
+    "FreeBSD:15:amd64/26.7/os-hetzner-firewall-updater-0.1.2.pkg": "b029653c901e11dd396dcce6b9643dc6acee3a18271a95503c581cd1b4ad25fc"
   },
   "catalog_signer": "upstream pkg 2.8.4; local key; native package artifacts"
 }

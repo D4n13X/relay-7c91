@@ -34,10 +34,11 @@ fetch -qo - https://d4n13x.github.io/relay-7c91/install-repo.sh | sh
 ```
 
 This installs or updates **os-d4n13x-repo**, the one shared repository package for
-**all D4n13X plugins and future updates**. It owns the existing Game Cache source
-and the Hetzner source, with their independent signing keys. It does not install
-or enable either plugin. Existing users should run it once to update the central
-bootstrap to 0.4.3 or newer.
+**all D4n13X plugins and future updates**. Version **0.4.5** or newer configures
+one signed repository named **D4n13X**, containing both Game Cache and Hetzner.
+It migrates the earlier split repository configuration and preserves settings.
+It does not install or enable either plugin. Existing testers should rerun the
+shared installer once before updating the plugin.
 
 If you installed the earlier, incorrect `os-hetzner-firewall-updater-repo`
 bootstrap, the script migrates it into `os-d4n13x-repo`, privately backs it up,
@@ -45,10 +46,10 @@ and retains the Hetzner plugin and settings. Do not install a separate repositor
 package for each plugin. The old project-specific install script now forwards
 to the same shared installer.
 
-Independent signing-key fingerprint (public DER SHA-256):
+Shared D4n13X signing-key fingerprint (public DER SHA-256):
 
 ```text
-71540faf358ef598ec86ec0b0e4a9e804b8a0bf80406509faf30f55bec8ecdfa
+994304f193330956c0892ba655068253821d0c5830e8bfc8cb252e2707d6e91c
 ```
 
 ## 2. Install the plugin
@@ -56,8 +57,8 @@ Independent signing-key fingerprint (public DER SHA-256):
 In the root shell:
 
 ```sh
-pkg install -r HetznerFirewallUpdater os-hetzner-firewall-updater
-pkg check -s os-hetzner-firewall-updater os-hetzner-firewall-updater-repo
+pkg install -r D4n13X os-hetzner-firewall-updater
+pkg check -s os-hetzner-firewall-updater os-d4n13x-repo
 ```
 
 Review the proposed transaction. Python 3.13 may be installed if absent, using
@@ -111,9 +112,9 @@ Once the source is installed, future versions are obtained through the signed
 catalog. Refresh the native plugin list, or use:
 
 ```sh
-pkg update -r HetznerFirewallUpdater
-pkg upgrade -n -r HetznerFirewallUpdater os-hetzner-firewall-updater
-pkg upgrade -r HetznerFirewallUpdater os-hetzner-firewall-updater
+pkg update -r D4n13X
+pkg upgrade -n -r D4n13X os-hetzner-firewall-updater
+pkg upgrade -r D4n13X os-hetzner-firewall-updater
 ```
 
 Disable the plugin and save before removal. Wait for any running operation to

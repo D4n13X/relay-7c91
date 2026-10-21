@@ -1,25 +1,48 @@
 {
-  "schema": 2,
   "repository_url": "https://d4n13x.github.io/relay-7c91/FreeBSD:15:amd64/26.7",
-  "legacy_repository_url": "https://d4n13x.github.io/relay-7c91/FreeBSD:15:amd64/26.7",
   "abi": "FreeBSD:15:amd64",
   "opnsense_release": "26.7",
+  "version": "0.4.5",
   "public_key_der_sha256": "994304f193330956c0892ba655068253821d0c5830e8bfc8cb252e2707d6e91c",
-  "plugin_version": "0.4.1",
-  "central_version": "0.4.4",
   "packages": {
     "os-gamecache-0.4.1.pkg": "0a69858e2cdb495fd7f49225c0ffd4b0d3d2a54689defe888b0d31c3b580f61c",
-    "os-d4n13x-repo-0.4.4.pkg": "c4d15b313542feb55ef12e6535de7596fc405167d976439dc4bd088e054637a0"
+    "os-d4n13x-repo-0.4.5.pkg": "a48e00dc72268fcc1ce1ab481abaf8ec5ec61b21f90c58be6f1f9a2a075d27f0",
+    "os-hetzner-firewall-updater-0.1.2.pkg": "b029653c901e11dd396dcce6b9643dc6acee3a18271a95503c581cd1b4ad25fc"
   },
   "files": {
-    "FreeBSD:15:amd64/26.7/data.pkg": "0a299fd01c954f2a4ea15d78ebbab3c91b601a3516f2af0e3145327b6a1e9a3b",
+    "install-repo.sh": "4a3074465b534046d8eb6db33f64502a3c9f47143959bbb5d05f39a4f5129b6e",
+    ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gamecache.pub": "54497d51e726b26350cdad62ffb1d2eb4f82e9a25bb1b220821a26c903919226",
+    "FreeBSD:15:amd64/26.7/packagesite.pkg": "9309a2db580df20755b52f4b8fbd2e5aa4746efbd66be9ccc0e77ebfe844b2ca",
     "FreeBSD:15:amd64/26.7/meta": "ca7f091a4f9eccbf537a966a0d4d555cdfc4de34ad5be5c96a12c4485130664c",
     "FreeBSD:15:amd64/26.7/meta.conf": "ca7f091a4f9eccbf537a966a0d4d555cdfc4de34ad5be5c96a12c4485130664c",
-    "FreeBSD:15:amd64/26.7/os-d4n13x-repo-0.4.4.pkg": "c4d15b313542feb55ef12e6535de7596fc405167d976439dc4bd088e054637a0",
+    "FreeBSD:15:amd64/26.7/data.pkg": "3027a560c6fed11d22ccffd54c38c47d956911e8955860a4da86b9872b7d4557",
+    "FreeBSD:15:amd64/26.7/os-d4n13x-repo.pkg": "a48e00dc72268fcc1ce1ab481abaf8ec5ec61b21f90c58be6f1f9a2a075d27f0",
+    "FreeBSD:15:amd64/26.7/os-d4n13x-repo-0.4.5.pkg": "a48e00dc72268fcc1ce1ab481abaf8ec5ec61b21f90c58be6f1f9a2a075d27f0",
+    "FreeBSD:15:amd64/26.7/os-hetzner-firewall-updater-0.1.2.pkg": "b029653c901e11dd396dcce6b9643dc6acee3a18271a95503c581cd1b4ad25fc",
+    "FreeBSD:15:amd64/26.7/os-d4n13x-repo.pkg.sha256": "24728b2385943e1c31ef3b72cd53cea6aaf5aa661d5238767d22bd10d494c9ff",
     "FreeBSD:15:amd64/26.7/os-gamecache-0.4.1.pkg": "0a69858e2cdb495fd7f49225c0ffd4b0d3d2a54689defe888b0d31c3b580f61c",
-    "FreeBSD:15:amd64/26.7/packagesite.pkg": "6a77c35ba74222f39697e5e8be9f592aad8186ae0c47a17f04a6f4eb8fc97833",
-    "gamecache.pub": "54497d51e726b26350cdad62ffb1d2eb4f82e9a25bb1b220821a26c903919226"
+    "projects/opnsense-repository/bootstrap-build.json": "6ba1322544c54752d258906ea59f66ed92191ce4216d43eceb293684cf26ac06",
+    "projects/opnsense-repository/GETTING_STARTED.md": "2c960bf612b3fe7b0b46dd6a5153143f779e5df35c11a6107e25a91edceab17c",
+    "projects/opnsense-repository/publish_shared_release.py": "9de9f195e8803f1b83d6e500ce98d2f46b83106acc82c5f4bf455585684b6339",
+    "projects/opnsense-repository/install-repo.sh.in": "8840aa0d98375c6ef4e2e943b5ab0393442617ef6ca27184b393cce3ef4a666d",
+    "projects/opnsense-repository/build_bootstrap.py": "d3fe6b523e39df5d6fcd25f7e010f7e5f48bc2296287ece185e4f41a9310ba17",
+    "projects/gamecache/repository-build.json": "651a2a4392cd3f25789703b19e1ae2f2da66a41cc7350701e4555d1a1335031b",
+    "projects/gamecache/central-bootstrap.json": "6ba1322544c54752d258906ea59f66ed92191ce4216d43eceb293684cf26ac06",
+    "projects/gamecache/FreeBSD:15:amd64/26.7/packagesite.pkg": "9309a2db580df20755b52f4b8fbd2e5aa4746efbd66be9ccc0e77ebfe844b2ca",
+    "projects/gamecache/FreeBSD:15:amd64/26.7/meta": "ca7f091a4f9eccbf537a966a0d4d555cdfc4de34ad5be5c96a12c4485130664c",
+    "projects/gamecache/FreeBSD:15:amd64/26.7/meta.conf": "ca7f091a4f9eccbf537a966a0d4d555cdfc4de34ad5be5c96a12c4485130664c",
+    "projects/gamecache/FreeBSD:15:amd64/26.7/data.pkg": "3027a560c6fed11d22ccffd54c38c47d956911e8955860a4da86b9872b7d4557",
+    "projects/gamecache/FreeBSD:15:amd64/26.7/os-d4n13x-repo-0.4.5.pkg": "a48e00dc72268fcc1ce1ab481abaf8ec5ec61b21f90c58be6f1f9a2a075d27f0",
+    "projects/gamecache/FreeBSD:15:amd64/26.7/os-hetzner-firewall-updater-0.1.2.pkg": "b029653c901e11dd396dcce6b9643dc6acee3a18271a95503c581cd1b4ad25fc",
+    "projects/gamecache/FreeBSD:15:amd64/26.7/os-gamecache-0.4.1.pkg": "0a69858e2cdb495fd7f49225c0ffd4b0d3d2a54689defe888b0d31c3b580f61c"
   },
-  "catalog_signer": "upstream pkg 2.8.4; workstation key; preserved native packages",
-  "canonical_repository_url": "https://d4n13x.github.io/relay-7c91/projects/gamecache/FreeBSD:15:amd64/26.7"
+  "catalog_signer": "upstream pkg 2.8.4; local key; native package artifacts",
+  "publication_base_commit": "2c99d5dd24da3f3b96259ba213730272de80582b",
+  "canonical_repository_url": "https://d4n13x.github.io/relay-7c91/projects/gamecache/FreeBSD:15:amd64/26.7",
+  "central_version": "0.4.5",
+  "plugin_versions": {
+    "os-gamecache": "0.4.1",
+    "os-hetzner-firewall-updater": "0.1.2"
+  }
 }
